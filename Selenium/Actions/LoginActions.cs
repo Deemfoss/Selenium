@@ -13,7 +13,7 @@ namespace Selenium.Actions
             {
                 LoginWebItems.LoginFormButton.Click();
                 LoginWebItems.UserNameTextBox.SetValue("demfoss@gmail.com");
-                LoginWebItems.PasswordTextBox.SetValue("Baradina12!");
+                LoginWebItems.PasswordTextBox.SetValue("Bqweqweq!");
                 LoginWebItems.LoginButton.Click();
                 TestFramework.Delay();
             }
