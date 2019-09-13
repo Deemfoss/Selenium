@@ -7,7 +7,8 @@ namespace Selenium
         static void Main(string[] args)
         {
             TestCase.doTestCase();
-
+            TestFramework.Delay();
+            TestCase.doSearch();
         }
     }
 }

@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AuthSelenium
+namespace Selenium
 {
    public class PagesActions
     {
+        public static void OpenLoginPage()
+        {
+            TestFramework.OpenUrl("https://www.cars.com/profile/secure/signup/");
+           
+        }
         public static void OpenHomePage()
         {
-            TestFramework.OpenUrl("asdasd");
-        }
+            TestFramework.OpenUrl("https://www.cars.com/");
 
+        }
+       
     }
 }

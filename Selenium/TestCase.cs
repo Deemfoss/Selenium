@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Selenium.Actions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,8 +9,15 @@ namespace Selenium
     {
         public static void doTestCase()
         {
-            PagesActions.OpenHomePage();
+            PagesActions.OpenLoginPage();
             LoginActions.DoLogin();
+        }
+
+        public static void doSearch()
+        {
+            PagesActions.OpenHomePage();
+            SearchingActions.DoSearch();
+            TestFramework.Delay();
         }
 
     }

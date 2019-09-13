@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Chrome;
+using System.IO;
+using System.Reflection;
+
 namespace Selenium
 {
     public class TestFramework
@@ -16,13 +20,12 @@ namespace Selenium
             {
                 if (_webDriver == null)
                 {
-                    _webDriver = new ChromeDriver();
+                    _webDriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 }
 
                 return _webDriver;
             }
         }
-
         public static void OpenUrl(string URl)
         {
             webDriver.Navigate().GoToUrl(URl);
@@ -45,7 +48,10 @@ namespace Selenium
             {
                 return webDriver.FindElementByXPath(webItem.XPathQuery);
             }
-
+            if (webItem.Name != "")
+            {
+                webDriver.FindElementByName(webItem.Name);
+            }
             return null;
         }
 
